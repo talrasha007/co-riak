@@ -1,0 +1,14 @@
+{
+  "name": "co-riak",
+  "version": "0.0.1",
+  "repository": "https://github.com/talrasha007/co-riak.git",
+  "description": "A riak client in co stylel.",
+  "dependencies": {
+    "co-request": "~0.2.0",
+    "codash": "~0.0.2",
+    "request": "~2.51.0"
+  },
+  "devDependencies": {
+    "co": "~4.1.0"
+  }
+}
