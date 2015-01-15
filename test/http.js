@@ -3,7 +3,7 @@ var expect = require('expect.js'),
     db = require('../').getClient({ servers: ['10.10.35.159:8098'], proto: 'http' }),
     bucket = db.bucket('default', '_test_');
 
-describe('Basic Operations', function () {
+describe('HTTP Basic Operations', function () {
     it('should get same item just putted.', function (cb) {
         co(function *() {
             yield* bucket.new('0010', { imei: ['859000000001'], idfa: ['ABCDE'] }).index({ foo: [1, 2], imei: ['859000000001'], idfa: ['ABCDE', 'FDE'] }).save();
