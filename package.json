@@ -6,9 +6,11 @@
   "dependencies": {
     "co-request": "~0.2.0",
     "codash": "~0.0.2",
+    "protobuf": "^0.11.0",
     "request": "~2.51.0"
   },
   "devDependencies": {
-    "co": "~4.1.0"
+    "co": "~4.1.0",
+    "expect.js": "^0.3.1"
   }
 }
