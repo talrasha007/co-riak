@@ -1,0 +1,99 @@
+
+¦
+riak_dt.proto"…
+MapField
+name ($
+type (2.MapField.MapFieldType"E
+MapFieldType
+COUNTER
+SET
+REGISTER
+FLAG
+MAP"˜
+MapEntry
+field (2	.MapField
+counter_value (
+	set_value (
+register_value (
+
+flag_value (
+	map_value (2	.MapEntry"Ï
+
+DtFetchReq
+bucket (
+key (
+type (	
+r (
+
+pr (
+basic_quorum (
+notfound_ok (
+timeout (
+sloppy_quorum	 (
+n_val
+ (
+include_context (:true"Q
+DtValue
+counter_value (
+	set_value (
+	map_value (2	.MapEntry"‡
+DtFetchResp
+context (#
+type (2.DtFetchResp.DataType
+value (2.DtValue")
+DataType
+COUNTER
+SET
+MAP"
+	CounterOp
+	increment ("&
+SetOp
+adds (
+removes ("Ñ
+	MapUpdate
+field (2	.MapField
+
+counter_op (2
+.CounterOp
+set_op (2.SetOp
+register_op ("
+flag_op (2.MapUpdate.FlagOp
+map_op (2.MapOp"!
+FlagOp
+
+ENABLE
+DISABLE"@
+MapOp
+removes (2	.MapField
+updates (2
+.MapUpdate"V
+DtOp
+
+counter_op (2
+.CounterOp
+set_op (2.SetOp
+map_op (2.MapOp"ñ
+DtUpdateReq
+bucket (
+key (
+type (
+context (
+op (2.DtOp	
+w (
+
+dw (
+
+pw (
+return_body	 (:false
+timeout
+ (
+sloppy_quorum (
+n_val (
+include_context (:true"t
+DtUpdateResp
+key (
+context (
+counter_value (
+	set_value (
+	map_value (2	.MapEntryB#
+com.basho.riak.protobufBRiakDtPB
