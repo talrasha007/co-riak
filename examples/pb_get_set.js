@@ -18,6 +18,10 @@ co(function *() {
     console.log(item.key());
     console.log(item.val());
     console.log(item.meta());
-}).catch(function (err) {
+}).then(function () {
+    console.log('done...');
+    process.exit(0);
+}, function (err) {
     console.error(err.stack);
+    process.exit(0);
 });
