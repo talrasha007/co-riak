@@ -11,8 +11,8 @@ describe('Basic Operations', function () {
             var q1 = yield* bucket.query('imei', '859000000001');
             var q2 = yield* bucket.query('idfa', 'FDE');
 
-            expect(q1.body.keys).to.eql(['0010']);
-            expect(q2.body.keys).to.eql(['0010']);
+            expect(q1.data).to.eql(['0010']);
+            expect(q2.data).to.eql(['0010']);
 
             var item = yield* bucket.get('0010');
             expect(item.key()).to.eql('0010');
