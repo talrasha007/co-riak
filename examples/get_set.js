@@ -1,5 +1,5 @@
 var co = require('co'),
-    db = require('../').getClient({ servers: ['10.10.35.159:8098'] });
+    db = require('../').getClient({ servers: ['10.10.35.159:8098'], proto: 'http' });
 
 co(function *() {
     var devices = db.bucket('dmp', 'devices');
