@@ -18,6 +18,12 @@ co(function *() {
     console.log(item.key());
     console.log(item.val());
     console.log(item.meta());
+
+    yield* devices.new(new Buffer('00AA', 'hex'), new Buffer('AABBCC', 'hex')).index({ foo: [new Buffer('CCDD', 'hex')] }).save();
+    item = yield* devices.get(new Buffer('00AA', 'hex'));
+    console.log(item.key());
+    console.log(item.val());
+    console.log(item.meta());
 }).then(function () {
     console.log('done...');
     process.exit(0);
