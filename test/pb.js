@@ -20,4 +20,14 @@ describe('PBC Basic Operations', function () {
             expect(item.meta().index).to.eql({ foo: [1, 2], imei: [new Buffer('859000000001')], idfa: [new Buffer('ABCDE'), new Buffer('FDE')] });
         }).then(cb, cb);
     });
+
+    it('binary data should be ok', function (cb) {
+        co(function *() {
+            yield* bucket.new(new Buffer('00AA', 'hex'), new Buffer('AABBCC', 'hex')).index({ foo: [new Buffer('CCDD', 'hex')] }).save();
+            var item = yield* bucket.get(new Buffer('00AA', 'hex'));
+            expect(item.key()).to.eql(new Buffer('00AA', 'hex'));
+            expect(item.val()).to.eql(new Buffer('AABBCC', 'hex'));
+            expect(item.meta().index).to.eql({ foo: [new Buffer('CCDD', 'hex')] });
+        }).then(cb, cb);
+    })
 });
